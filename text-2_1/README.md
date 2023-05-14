@@ -1,9 +1,9 @@
-#**创建第一个Android Kotlin应用**
+# **创建第一个Android Kotlin应用**
 
-##创建一个新的工程  
+## 创建一个新的工程  
 ![新建项目](https://github.com/1814870464/android_3/blob/main/text-2_1/t1.png)
 
-##完善第一个屏幕fragment_first.xml  
+## 完善第一个屏幕fragment_first.xml  
 代码如下  
 ```
 
@@ -61,11 +61,11 @@
 效果  
 ![第一屏幕](https://github.com/1814870464/android_3/blob/main/text-2_1/t2.png)  
 
-##添加代码完成应用程序交互  
-###设置代码自动补全  
+## 添加代码完成应用程序交互  
+### 设置代码自动补全  
 ![设置](https://github.com/1814870464/android_3/blob/main/text-2_1/t3.png)  
 
-###完善第二屏幕
+### 完善第二屏幕
 完善后代码如下  
 ```
  <TextView
@@ -115,7 +115,7 @@
 效果
 ![第二屏幕](https://github.com/1814870464/android_3/blob/main/text-2_1/t3.png)  
 
-##FirstFragment添加代码，向SecondFragment发数据
+## FirstFragment添加代码，向SecondFragment发数据
 `
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -157,7 +157,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     }
 `
     
-##添加SecondFragment的代码  
+## 添加SecondFragment的代码  
 `import androidx.navigation.fragment.navArgs`
 ```
 val args: SecondFragmentArgs by navArgs()
@@ -180,7 +180,7 @@ val args: SecondFragmentArgs by navArgs()
     }
 ```
 
-##APP演示  
+## APP演示  
 连续按下count  
 ![COUNT](https://github.com/1814870464/android_3/blob/main/text-2_1/t4.png)  
 点击TOSAT  
