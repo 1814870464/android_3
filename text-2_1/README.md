@@ -179,3 +179,11 @@ val args: SecondFragmentArgs by navArgs()
         }
     }
 ```
+
+##APP演示  
+连续按下count  
+![COUNT](https://github.com/1814870464/android_3/blob/main/text-2_1/t4.png)  
+点击TOSAT  
+![TOSAT](https://github.com/1814870464/android_3/blob/main/text-2_1/t5.png)  
+点击RANDOM生产0-9的随机数  
+![RANDOM](https://github.com/1814870464/android_3/blob/main/text-2_1/t6.png)
