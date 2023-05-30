@@ -22,7 +22,7 @@ git clone https://github.com/hoitab/TFLClassify.git
 
 ## 添加代码重新运行APP  
 定位“start”模块MainActivity.kt文件的TODO 1
-![模型代码](https://github.com/1814870464/android_3/blob/main/text-4/picture/p1.png)  
+![模型代码](https://github.com/1814870464/android_3/blob/main/text-4/picture/p2.png)  
 
 ### 添加代码
 ```kotlin
@@ -113,7 +113,7 @@ git clone https://github.com/hoitab/TFLClassify.git
 <img src="picture\p3-1.jpg" width="35%"/>  
 
 ### 扫描玫瑰  
-<img src="picture\p3-3.jpg" width="35%"/>  
+<img src="picture\p3-2.jpg" width="35%"/>  
 
 ### 扫描蒲公英  
 <img src="picture\p3-3.jpg" width="35%"/>  
