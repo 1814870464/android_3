@@ -109,9 +109,11 @@ git clone https://github.com/hoitab/TFLClassify.git
 
 
 ## 运行效果
-#### 扫描郁金香  
-![扫描郁金香](https://github.com/1814870464/android_3/blob/main/text-4/picture/p3-1.jpg)
-#### 扫描玫瑰  
-![扫描玫瑰](https://github.com/1814870464/android_3/blob/main/text-4/picture/p3-2.jpg)
-#### 扫描蒲公英  
-![扫描蒲公英](https://github.com/1814870464/android_3/blob/main/text-4/picture/p3-3.jpg)
+### 扫描郁金香  
+<img src="picture\p3-1.jpg" width="35%"/>  
+
+### 扫描玫瑰  
+<img src="picture\p3-3.jpg" width="35%"/>  
+
+### 扫描蒲公英  
+<img src="picture\p3-3.jpg" width="35%"/>  
