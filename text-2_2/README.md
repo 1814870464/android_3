@@ -313,7 +313,7 @@ catch(exc: Exception) {
       Log.e(TAG, "Use case binding failed", exc)
 }
 ```
-最后，运行应用，可以看到相机预览
+最后，运行应用，可以看到相机预览  
 <img src="pic\p3.png"  width = "33%" />  
 
 ## 实现 ImageCapture 用例（拍照功能）   
