@@ -85,7 +85,8 @@ buildFeatures {
    <string name="stop_capture">Stop Capture</string>
 </resources>
 ```  
-![p1]()  
+<img src="pic\p1.png"  width = "35%" />   
+
 ## 编写 MainActivity.kt 代码  
 将 MainActivity.kt 中的代码替换为以下代码，但保留软件包名称不变。它包含 import 语句、将要实例化的变量、要实现的函数以及常量。  
 ```
@@ -238,7 +239,7 @@ else {
 }
 ```
 运行应用，可发现应用程序请求使用摄像头和麦克风  
-![P2]()  
+<img src="pic\p2.png"  width = "33%" />
 ## 实现 Preview 用例
 填充之前的startCamera() 函数  
 ```
@@ -313,5 +314,126 @@ catch(exc: Exception) {
 }
 ```
 最后，运行应用，可以看到相机预览
-![P3]()
+<img src="pic\p3.png"  width = "33%" />  
+
+## 实现 ImageCapture 用例（拍照功能）   
+```
+private fun takePhoto() {
+        // Get a stable reference of the modifiable image capture use case
+        val imageCapture = imageCapture ?: return
+
+        // Create time stamped name and MediaStore entry.
+        val name = SimpleDateFormat(FILENAME_FORMAT, Locale.US)
+            .format(System.currentTimeMillis())
+        val contentValues = ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME, name)
+            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+            if(Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
+                put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/CameraX-Image")
+            }
+        }
+
+        // Create output options object which contains file + metadata
+        val outputOptions = ImageCapture.OutputFileOptions
+            .Builder(contentResolver,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                contentValues)
+            .build()
+
+        // Set up image capture listener, which is triggered after photo has
+        // been taken
+        imageCapture.takePicture(
+            outputOptions,
+            ContextCompat.getMainExecutor(this),
+            object : ImageCapture.OnImageSavedCallback {
+                override fun onError(exc: ImageCaptureException) {
+                    Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
+                }
+
+                override fun
+                        onImageSaved(output: ImageCapture.OutputFileResults){
+                    val msg = "Photo capture succeeded: ${output.savedUri}"
+                    Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, msg)
+                }
+            }
+        )
+    }
+```  
+<img src="pic\p4.png"  width = "35%" />   
+
+
+##  实现 VideoCapture 用例（拍摄视频）  
+```
+private fun captureVideo() {
+        val videoCapture = this.videoCapture ?: return
+
+        viewBinding.videoCaptureButton.isEnabled = false
+
+        val curRecording = recording
+        if (curRecording != null) {
+            // Stop the current recording session.
+            curRecording.stop()
+            recording = null
+            return
+        }
+
+        // create and start a new recording session
+        val name = SimpleDateFormat(FILENAME_FORMAT, Locale.US)
+            .format(System.currentTimeMillis())
+        val contentValues = ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME, name)
+            put(MediaStore.MediaColumns.MIME_TYPE, "video/mp4")
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
+                put(MediaStore.Video.Media.RELATIVE_PATH, "Movies/CameraX-Video")
+            }
+        }
+
+        val mediaStoreOutputOptions = MediaStoreOutputOptions
+            .Builder(contentResolver, MediaStore.Video.Media.EXTERNAL_CONTENT_URI)
+            .setContentValues(contentValues)
+            .build()
+        recording = videoCapture.output
+            .prepareRecording(this, mediaStoreOutputOptions)
+            .apply {
+                if (PermissionChecker.checkSelfPermission(this@MainActivity,
+                        Manifest.permission.RECORD_AUDIO) ==
+                    PermissionChecker.PERMISSION_GRANTED)
+                {
+                    withAudioEnabled()
+                }
+            }
+            .start(ContextCompat.getMainExecutor(this)) { recordEvent ->
+                when(recordEvent) {
+                    is VideoRecordEvent.Start -> {
+                        viewBinding.videoCaptureButton.apply {
+                            text = getString(R.string.stop_capture)
+                            isEnabled = true
+                        }
+                    }
+                    is VideoRecordEvent.Finalize -> {
+                        if (!recordEvent.hasError()) {
+                            val msg = "Video capture succeeded: " +
+                                    "${recordEvent.outputResults.outputUri}"
+                            Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT)
+                                .show()
+                            Log.d(TAG, msg)
+                        } else {
+                            recording?.close()
+                            recording = null
+                            Log.e(TAG, "Video capture ends with error: " +
+                                    "${recordEvent.error}")
+                        }
+                        viewBinding.videoCaptureButton.apply {
+                            text = getString(R.string.start_capture)
+                            isEnabled = true
+                        }
+                    }
+                }
+            }
+    }
+```   
+<img src="pic\p5.png"  width = "35%" />   
+<img src="pic\p6.png"  width = "35%" /> 
+
 
