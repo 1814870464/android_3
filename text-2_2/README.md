@@ -239,7 +239,7 @@ else {
 }
 ```
 运行应用，可发现应用程序请求使用摄像头和麦克风  
-<img src="pic\p2.png"  width = "33%" />
+<img src="pic\p2.png"  width = "33%" />  
 ## 实现 Preview 用例
 填充之前的startCamera() 函数  
 ```
