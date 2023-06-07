@@ -8,6 +8,31 @@
 !wget --no-check-certificate https://storage.googleapis.com/learning-datasets/rps-test-set.zip
 ```  
 
+```
+--2023-06-07 03:46:38--  https://storage.googleapis.com/learning-datasets/rps.zip
+Resolving storage.googleapis.com (storage.googleapis.com)... 142.250.31.128, 142.251.111.128, 142.251.16.128, ...
+Connecting to storage.googleapis.com (storage.googleapis.com)|142.250.31.128|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 200682221 (191M) [application/zip]
+Saving to: ‘rps.zip’
+
+rps.zip             100%[===================>] 191.38M  90.8MB/s    in 2.1s    
+
+2023-06-07 03:46:40 (90.8 MB/s) - ‘rps.zip’ saved [200682221/200682221]
+
+--2023-06-07 03:46:41--  https://storage.googleapis.com/learning-datasets/rps-test-set.zip
+Resolving storage.googleapis.com (storage.googleapis.com)... 142.251.163.128, 142.250.31.128, 172.253.62.128, ...
+Connecting to storage.googleapis.com (storage.googleapis.com)|142.251.163.128|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 29516758 (28M) [application/zip]
+Saving to: ‘rps-test-set.zip’
+
+rps-test-set.zip    100%[===================>]  28.15M   102MB/s    in 0.3s    
+
+2023-06-07 03:46:41 (102 MB/s) - ‘rps-test-set.zip’ saved [29516758/29516758]
+```  
+
+
 ### 然后解压下载的数据集。
 
 ```
@@ -76,7 +101,15 @@ for i, img_path in enumerate(next_rock+next_paper+next_scissors):
   plt.imshow(img)
   plt.axis('Off')
   plt.show()
-  ```
+```  
+![p1]()  
+![p2]()  
+![p3]()  
+![p4]()  
+![p5]()  
+![p6]()  
+
+
   
   
   
