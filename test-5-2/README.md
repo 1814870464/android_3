@@ -102,14 +102,13 @@ for i, img_path in enumerate(next_rock+next_paper+next_scissors):
   plt.axis('Off')
   plt.show()
 ```  
-<img src="pic\p1.png"  width = "35%" />
-![p1](pic\p1.png)
-![p1](img src="pic\p1.png"  width = "50%")
-![p2](img src="pic\p2.png"  width = "50%")  
-![p3](img src="pic\p3.png"  width = "50%")
-![p4](img src="pic\p4.png"  width = "50%") 
-![p5](img src="pic\p5.png"  width = "50%")
-![p6](img src="pic\p6.png"  width = "50%")  
+<img src="pic\p1.png"  width = "50%" />
+<img src="pic\p2.png"  width = "50%" />
+<img src="pic\p3.png"  width = "50%" />  
+
+<img src="pic\p4.png"  width = "50%" />
+<img src="pic\p5.png"  width = "50%" />
+<img src="pic\p6.png"  width = "50%" />
 
 
   
