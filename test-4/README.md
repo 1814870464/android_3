@@ -18,11 +18,11 @@ git clone https://github.com/hoitab/TFLClassify.git
 * 点击“Finish”完成模型导入，系统将自动下载模型的依赖包并将依赖项添加至模块的build.gradle文件。
 
 最终TensorFlow Lite模型被成功导入，并生成摘要信息  
-![模型导入](https://github.com/1814870464/android_3/blob/main/text-4/picture/p1.png)
+![模型导入](https://github.com/1814870464/android_3/blob/main/test-4/picture/p1.png)
 
 ## 添加代码重新运行APP  
 定位“start”模块MainActivity.kt文件的TODO 1
-![模型代码](https://github.com/1814870464/android_3/blob/main/text-4/picture/p2.png)  
+![模型代码](https://github.com/1814870464/android_3/blob/main/test-4/picture/p2.png)  
 
 ### 添加代码
 ```kotlin
