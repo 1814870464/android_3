@@ -176,7 +176,82 @@ model.save("rps.h5")
   
   
 ```
-
+2023-06-07 04:12:07.367472: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2023-06-07 04:12:07.367530: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Found 2520 images belonging to 3 classes.
+Found 372 images belonging to 3 classes.
+2023-06-07 04:12:26.757627: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2023-06-07 04:12:26.757683: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2023-06-07 04:12:26.757713: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (codespaces-a62658): /proc/driver/nvidia/version does not exist
+2023-06-07 04:12:26.758755: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 148, 148, 64)      1792      
+                                                                 
+ max_pooling2d (MaxPooling2D  (None, 74, 74, 64)       0         
+ )                                                               
+                                                                 
+ conv2d_1 (Conv2D)           (None, 72, 72, 64)        36928     
+                                                                 
+ max_pooling2d_1 (MaxPooling  (None, 36, 36, 64)       0         
+ 2D)                                                             
+                                                                 
+ conv2d_2 (Conv2D)           (None, 34, 34, 128)       73856     
+                                                                 
+ max_pooling2d_2 (MaxPooling  (None, 17, 17, 128)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_3 (Conv2D)           (None, 15, 15, 128)       147584    
+                                                                 
+ max_pooling2d_3 (MaxPooling  (None, 7, 7, 128)        0         
+ 2D)                                                             
+                                                                 
+ flatten (Flatten)           (None, 6272)              0         
+...
+Total params: 3,473,475
+Trainable params: 3,473,475
+Non-trainable params: 0
+_________________________________________________________________
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+2023-06-07 04:12:30.017383: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 34020000 exceeds 10% of free system memory.
+Epoch 1/25
+2023-06-07 04:12:35.034346: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 34020000 exceeds 10% of free system memory.
+2023-06-07 04:12:35.057941: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 706535424 exceeds 10% of free system memory.
+2023-06-07 04:12:36.311879: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 176633856 exceeds 10% of free system memory.
+2023-06-07 04:12:36.403599: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 167215104 exceeds 10% of free system memory.
+20/20 [==============================] - 87s 4s/step - loss: 1.2325 - accuracy: 0.3433 - val_loss: 1.0895 - val_accuracy: 0.3333
+Epoch 2/25
+20/20 [==============================] - 78s 4s/step - loss: 1.0640 - accuracy: 0.4206 - val_loss: 0.8220 - val_accuracy: 0.8145
+Epoch 3/25
+20/20 [==============================] - 78s 4s/step - loss: 0.9519 - accuracy: 0.5254 - val_loss: 0.6328 - val_accuracy: 0.6855
+Epoch 4/25
+20/20 [==============================] - 76s 4s/step - loss: 0.6937 - accuracy: 0.6857 - val_loss: 0.8841 - val_accuracy: 0.5699
+Epoch 5/25
+20/20 [==============================] - 76s 4s/step - loss: 0.6703 - accuracy: 0.7040 - val_loss: 0.6849 - val_accuracy: 0.6129
+Epoch 6/25
+20/20 [==============================] - 77s 4s/step - loss: 0.5466 - accuracy: 0.7750 - val_loss: 0.1347 - val_accuracy: 1.0000
+Epoch 7/25
+20/20 [==============================] - 79s 4s/step - loss: 0.4059 - accuracy: 0.8262 - val_loss: 0.8982 - val_accuracy: 0.6505
+Epoch 8/25
+20/20 [==============================] - 76s 4s/step - loss: 0.4067 - accuracy: 0.8433 - val_loss: 0.2464 - val_accuracy: 0.9247
+Epoch 9/25
+20/20 [==============================] - 75s 4s/step - loss: 0.4207 - accuracy: 0.8500 - val_loss: 0.0740 - val_accuracy: 0.9758
+Epoch 10/25
+20/20 [==============================] - 74s 4s/step - loss: 0.2586 - accuracy: 0.9000 - val_loss: 0.0719 - val_accuracy: 0.9731
+Epoch 11/25
+20/20 [==============================] - 75s 4s/step - loss: 0.4036 - accuracy: 0.8730 - val_loss: 0.0516 - val_accuracy: 1.0000
+Epoch 12/25
+20/20 [==============================] - 74s 4s/step - loss: 0.1765 - accuracy: 0.9349 - val_loss: 0.0658 - val_accuracy: 0.9866
+Epoch 13/25
+20/20 [==============================] - 77s 4s/step - loss: 0.2615 - accuracy: 0.9016 - val_loss: 0.0440 - val_accuracy: 0.9785
+...
+Epoch 24/25
+20/20 [==============================] - 73s 4s/step - loss: 0.1438 - accuracy: 0.9587 - val_loss: 0.0506 - val_accuracy: 0.9758
+Epoch 25/25
+20/20 [==============================] - 75s 4s/step - loss: 0.1018 - accuracy: 0.9647 - val_loss: 0.0566 - val_accuracy: 0.9704
 ```
 
 ImageDataGenerator是Keras中图像预处理的类，经过预处理使得后续的训练更加准确。  
